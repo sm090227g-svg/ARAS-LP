@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="【ここに120字程度でSEO用の説明文。地域名+症状/キーワードを含める】">
+<title>【記事タイトル】｜株式会社ARAS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Shippori+Mincho:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B3A6B; --navy-dark: #0f2444; --red: #C0392B;
+  --gold: #C9943A; --gold-light: #E8B84B; --white: #ffffff;
+  --off-white: #F8F6F2; --gray: #F2F0EC; --text: #1a1a1a;
+  --text-mid: #444; --text-light: #777; --line-green: #06C755;
+  --border: #E2DDD6; --shadow: 0 4px 24px rgba(0,0,0,0.09);
+}
+*,*::before,*::after{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; font-size:16px; }
+body{ font-family:'Noto Sans JP',sans-serif; color:var(--text); background:var(--off-white); line-height:1.9; }
+a{ color:var(--navy); }
+.header{ display:flex; align-items:center; justify-content:space-between; padding:14px 20px; background:var(--white); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:10; }
+.header-company{ display:flex; flex-direction:column; line-height:1.2; text-decoration:none; }
+.header-company-sub{ font-size:9px; color:var(--text-light); font-weight:700; letter-spacing:.05em; }
+.header-company-name{ font-size:14px; font-weight:900; color:var(--navy); letter-spacing:.06em; }
+.header-cta{ display:flex; align-items:center; gap:6px; background:var(--line-green); color:white; font-size:11px; font-weight:900; padding:9px 14px; border-radius:24px; white-space:nowrap; text-decoration:none; }
+.breadcrumb{ max-width:720px; margin:16px auto 0; padding:0 20px; font-size:12px; color:var(--text-light); }
+.breadcrumb a{ text-decoration:none; }
+article{ max-width:720px; margin:0 auto; padding:16px 20px 60px; }
+.post-tag{ display:inline-block; background:var(--gold); color:white; font-size:11px; font-weight:700; padding:3px 10px; border-radius:999px; margin-bottom:14px; }
+h1{ font-family:'Shippori Mincho',serif; font-size:clamp(22px,5.5vw,30px); font-weight:800; line-height:1.6; color:var(--navy); margin-bottom:12px; }
+.post-meta{ font-size:12px; color:var(--text-light); margin-bottom:28px; }
+.lead{ background:var(--white); border-left:4px solid var(--gold); padding:18px 20px; font-size:14.5px; color:var(--text-mid); border-radius:0 10px 10px 0; margin-bottom:32px; }
+.post-img{ width:100%; height:auto; display:block; border-radius:12px; box-shadow:var(--shadow); margin:24px 0 6px; }
+.img-caption{ font-size:12px; color:var(--text-light); text-align:center; margin-bottom:24px; }
+.img-pair{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:24px 0 6px; }
+.img-pair img{ width:100%; height:auto; display:block; border-radius:10px; box-shadow:var(--shadow); }
+h2{ font-size:19px; font-weight:900; color:var(--navy); margin:36px 0 14px; padding-bottom:8px; border-bottom:2px solid var(--gold); }
+h3{ font-size:16px; font-weight:700; color:var(--navy); margin:24px 0 10px; }
+p{ font-size:15px; color:var(--text-mid); margin-bottom:16px; }
+ul, ol{ margin:0 0 20px 20px; }
+li{ font-size:15px; color:var(--text-mid); margin-bottom:8px; }
+.check-table{ width:100%; border-collapse:collapse; margin:20px 0 28px; font-size:14px; background:var(--white); border-radius:10px; overflow:hidden; box-shadow:var(--shadow); }
+.check-table th, .check-table td{ padding:12px 14px; border-bottom:1px solid var(--border); text-align:left; }
+.check-table th{ background:var(--navy); color:white; font-weight:700; }
+.check-table tr:last-child td{ border-bottom:none; }
+.cta-box{ background:var(--navy); color:white; border-radius:16px; padding:28px 24px; text-align:center; margin:40px 0; }
+.cta-box p{ color:#dfe7f5; font-size:14px; margin-bottom:16px; }
+.cta-box a{ display:inline-flex; align-items:center; gap:8px; background:var(--line-green); color:white; font-weight:900; font-size:15px; padding:14px 28px; border-radius:999px; text-decoration:none; }
+.related{ margin-top:44px; padding-top:24px; border-top:1px solid var(--border); }
+.related h2{ border:none; padding:0; margin-bottom:16px; }
+.related a{ display:block; font-size:14px; padding:10px 0; text-decoration:none; }
+.footer{ text-align:center; padding:30px 20px 40px; font-size:12px; color:var(--text-light); }
+.footer a{ color:var(--navy); text-decoration:none; font-weight:700; }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <a href="/" class="header-company">
+    <span class="header-company-sub">株式会社</span>
+    <span class="header-company-name">ARAS</span>
+  </a>
+  <a href="https://lin.ee/QOstfvI" class="header-cta">LINE相談</a>
+</header>
+
+<div class="breadcrumb">
+  <a href="/">トップ</a> ＞ <a href="/blog/">ブログ</a> ＞ 【記事タイトル短縮版】
+</div>
+
+<article>
+  <span class="post-tag">【カテゴリ名：外壁の劣化／費用・相場／業者選び 等】</span>
+  <h1>【記事タイトル：地域名+症状/キーワードを含める】</h1>
+  <div class="post-meta">【YYYY.MM.DD】 ｜ 株式会社ARAS（川西・宝塚・池田エリア対応）</div>
+
+  <div class="lead">
+    【導入文：読者の悩みや疑問を1〜2文で共感的に提示】
+  </div>
+
+  <h2>【見出し1】</h2>
+  <p>【本文】</p>
+
+  <!-- 写真を1枚載せる場合はこの形 -->
+  <img class="post-img" src="/blog/images/【ファイル名.jpg】" alt="【写真の内容を説明する短い文】">
+  <div class="img-caption">【写真の説明・撮影場所など】</div>
+
+  <!-- ビフォーアフターなど2枚並べる場合はこの形 -->
+  <div class="img-pair">
+    <img src="/blog/images/【before.jpg】" alt="施工前の様子">
+    <img src="/blog/images/【after.jpg】" alt="施工後の様子">
+  </div>
+  <div class="img-caption">施工前（左）／施工後（右）</div>
+
+  <h2>【見出し2】</h2>
+  <p>【本文】</p>
+
+  <div class="cta-box">
+    <p>【CTA前の一言】</p>
+    <a href="https://lin.ee/QOstfvI">LINEで無料相談する</a>
+  </div>
+
+  <h2>まとめ</h2>
+  <p>【まとめ文】</p>
+
+  <div class="related">
+    <h2>あわせて読みたい</h2>
+    <a href="/blog/posts/kawanishi-gaiheki-hibiware-genin-taisho.html">川西市の外壁ひび割れ、放置すると危険？ 原因と対処法をプロが解説</a>
+    <a href="/blog/posts/takarazuka-yane-tosou-hiyou-souba.html">宝塚市の屋根塗装、費用相場はいくら？ 面積・塗料別の目安を公開</a>
+    <a href="/blog/">ブログ一覧に戻る</a>
+  </div>
+</article>
+
+<footer class="footer">
+  &copy; 2026 株式会社ARAS ｜ <a href="/">トップページへ</a>
+</footer>
+
+</body>
+</html>
