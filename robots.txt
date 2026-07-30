@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aras0099.netlify.app/sitemap.xml
