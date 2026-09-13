@@ -95,6 +95,50 @@ a{ color:inherit; }
   text-align:center; padding:30px 20px 40px; font-size:12px; color:var(--text-light);
 }
 .footer a{ color:var(--navy); text-decoration:none; font-weight:700; }
+
+.main-nav{
+  display:flex; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  background:var(--off-white); border-bottom:1px solid #e6ddce;
+  scrollbar-width:none;
+}
+.main-nav::-webkit-scrollbar{ display:none; }
+.main-nav-item{
+  flex:0 0 auto;
+  padding:13px 16px;
+  font-size:12.5px; font-weight:700; color:var(--navy);
+  text-decoration:none; white-space:nowrap;
+  border-bottom:3px solid transparent;
+}
+.main-nav-item.is-active{ color:var(--gold); border-bottom-color:var(--gold); background:rgba(201,148,58,.08); }
+.main-nav-item:not(.is-active):hover{ background:rgba(27,58,107,.06); }
+@media (min-width:900px){
+  .main-nav{ justify-content:center; }
+  .main-nav-item{ padding:16px 24px; font-size:14px; }
+}
+
+.main-nav-wrap{ position:relative; }
+.main-nav-wrap::after{
+  content:''; position:absolute; top:0; right:0; bottom:0; width:40px;
+  background:linear-gradient(to right, rgba(248,246,242,0), var(--off-white) 75%);
+  pointer-events:none; transition:opacity .25s;
+}
+.main-nav-wrap.at-end::after{ opacity:0; }
+.main-nav-hint{
+  position:absolute; top:50%; right:6px; transform:translateY(-50%);
+  width:22px; height:22px; border-radius:50%;
+  background:var(--gold); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; line-height:1; font-weight:900;
+  box-shadow:0 2px 8px rgba(0,0,0,.28);
+  pointer-events:none;
+  animation:navHintPulse 1.4s ease-in-out infinite;
+  transition:opacity .25s, visibility .25s;
+}
+.main-nav-wrap.at-end .main-nav-hint{ opacity:0; visibility:hidden; }
+@keyframes navHintPulse{
+  0%,100%{ transform:translateY(-50%) translateX(0); }
+  50%{ transform:translateY(-50%) translateX(4px); }
+}
 </style>
 </head>
 <body>
@@ -109,6 +153,18 @@ a{ color:inherit; }
     <a href="https://lin.ee/QOstfvI" class="header-cta">LINE相談</a>
   </div>
 </header>
+<div class="main-nav-wrap">
+<nav class="main-nav">
+    <a href="/" class="main-nav-item">TOP</a>
+    <a href="/reasons.html" class="main-nav-item">ARASが選ばれる理由</a>
+    <a href="/cases.html" class="main-nav-item">施工事例</a>
+    <a href="/menu.html" class="main-nav-item">工事メニュー</a>
+    <a href="/blog/" class="main-nav-item is-active">ブログ</a>
+    <a href="/company.html" class="main-nav-item">会社概要</a>
+  </nav>
+    <span class="main-nav-hint" aria-hidden="true">&#8250;</span>
+  </div>
+
 
 <section class="blog-hero">
   <div class="blog-hero-eyebrow">ARAS BLOG</div>
@@ -181,6 +237,27 @@ a{ color:inherit; }
 <footer class="footer">
   &copy; 2026 株式会社ARAS ｜ <a href="/">トップページへ</a>
 </footer>
+
+
+<script>
+document.querySelectorAll('.main-nav').forEach(function(nav){
+  var wrap = nav.closest('.main-nav-wrap');
+  if(!wrap) return;
+  function checkEnd(){
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    var scrollable = nav.scrollWidth > nav.clientWidth + 4;
+    wrap.classList.toggle('at-end', atEnd || !scrollable);
+  }
+  nav.addEventListener('scroll', checkEnd, {passive:true});
+  checkEnd();
+  if(nav.scrollWidth > nav.clientWidth + 4){
+    setTimeout(function(){
+      nav.scrollTo({left:28, behavior:'smooth'});
+      setTimeout(function(){ nav.scrollTo({left:0, behavior:'smooth'}); }, 550);
+    }, 900);
+  }
+});
+</script>
 
 </body>
 </html>
