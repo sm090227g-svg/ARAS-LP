@@ -682,14 +682,12 @@ a{ text-decoration:none; color:inherit; }
 }
 .price-card-photo{
   position:relative; aspect-ratio:4/3; background:var(--off-white);
-  display:flex; align-items:center; justify-content:center; flex-direction:column; gap:4px;
   border-bottom:1px solid var(--border);
-  padding-top:46px;
+  overflow:hidden;
 }
-.price-card-photo .photo-icon{ font-size:22px; opacity:.45; }
-.price-card-photo .photo-text{ font-size:10px; color:var(--text-light); text-align:center; line-height:1.4; }
+.price-card-photo-img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; }
 .price-ribbon{
-  position:absolute; left:0; top:12px;
+  position:absolute; left:0; top:12px; z-index:2;
   background:var(--navy-dark);
   color:white; font-weight:900;
   padding:7px 20px 7px 14px;
@@ -708,7 +706,7 @@ a{ text-decoration:none; color:inherit; }
 .price-amount{ font-size:26px; font-weight:900; color:var(--red); line-height:1; }
 .price-amount small{ font-size:14px; font-weight:700; margin-left:2px; }
 
-.price-hero-grid .price-card-photo{ aspect-ratio:16/11; padding-top:58px; }
+.price-hero-grid .price-card-photo{ aspect-ratio:16/11; }
 .price-hero-grid .price-ribbon{ font-size:18px; padding:10px 24px 10px 18px; }
 .price-hero-grid .price-amount{ font-size:34px; }
 .price-hero-grid .price-amount small{ font-size:16px; }
@@ -716,7 +714,6 @@ a{ text-decoration:none; color:inherit; }
 .price-small-grid{
   display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:6px;
 }
-.price-small-grid .price-card-photo{ padding-top:52px; }
 .price-small-grid .price-card-body{ padding:12px 12px 14px; }
 .price-small-grid .price-card-desc{ font-size:11px; min-height:2.6em; }
 .price-small-grid .price-amount{ font-size:20px; }
@@ -791,14 +788,44 @@ a{ text-decoration:none; color:inherit; }
   <div class="sec-sub">工事内容ごとの目安料金（税込）</div>
 
   <div class="price-hero-grid">
-    <div class="price-card price-card-imgonly">
-      <img src="/images/gaiheki-tosou-ad.jpg" alt="外壁塗装" class="price-card-fullimg" loading="lazy">
+    <div class="price-card">
+      <div class="price-card-photo">
+        <div class="price-ribbon">外壁塗装</div>
+        <img src="/images/photo-gaiheki-tosou.jpg" alt="外壁塗装" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">美観と耐久性を高め、大切な住まいを守ります。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">79<small>万円〜</small></span>
+        </div>
+      </div>
     </div>
-    <div class="price-card price-card-imgonly">
-      <img src="/images/yane-tosou-ad.jpg" alt="屋根塗装" class="price-card-fullimg" loading="lazy">
+    <div class="price-card">
+      <div class="price-card-photo">
+        <div class="price-ribbon">屋根塗装</div>
+        <img src="/images/photo-yane-tosou.jpg" alt="屋根塗装" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">紫外線や雨から住まいをしっかり守ります。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">39<small>万円〜</small></span>
+        </div>
+      </div>
     </div>
-    <div class="price-card price-card-imgonly" id="sealing">
-      <img src="/images/sealing-koji-ad.jpg" alt="シーリング工事" class="price-card-fullimg" loading="lazy">
+    <div class="price-card" id="sealing">
+      <div class="price-card-photo">
+        <div class="price-ribbon">シーリング工事</div>
+        <img src="/images/photo-sealing.jpg" alt="シーリング工事" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">ひび割れ・隙間をしっかりシーリングし、雨水の侵入を防ぎます。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">800〜1,000<small>円/m</small></span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -807,23 +834,83 @@ a{ text-decoration:none; color:inherit; }
   <div class="sec-sub">ちょっとした工事やお困りごとも、まとめてご相談ください</div>
 
   <div class="price-small-grid">
-    <div class="price-card price-card-imgonly">
-      <img src="/images/amadoi-shuuri-ad.jpg" alt="雨樋 修理・部分交換" class="price-card-fullimg" loading="lazy">
+    <div class="price-card">
+      <div class="price-card-photo">
+        <div class="price-ribbon">雨樋 修理・部分交換</div>
+        <img src="/images/photo-amadoi.jpg" alt="雨樋 修理・部分交換" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">雨水の流れをスムーズに。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">5,000<small>円〜</small></span>
+        </div>
+      </div>
     </div>
-    <div class="price-card price-card-imgonly">
-      <img src="/images/namiita-koukan-ad.jpg" alt="波板交換" class="price-card-fullimg" loading="lazy">
+    <div class="price-card">
+      <div class="price-card-photo">
+        <div class="price-ribbon">波板交換</div>
+        <img src="/images/photo-namiita.jpg" alt="波板交換" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">割れ・劣化した波板を新しく。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">5,000<small>円〜</small></span>
+        </div>
+      </div>
     </div>
-    <div class="price-card price-card-imgonly">
-      <img src="/images/polyca-koukan-ad.jpg" alt="ポリカ交換" class="price-card-fullimg" loading="lazy">
+    <div class="price-card">
+      <div class="price-card-photo">
+        <div class="price-ribbon">ポリカ交換</div>
+        <img src="/images/photo-polyca.jpg" alt="ポリカ交換" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">カーポート・テラスのポリカーボネートを交換。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">10,000<small>円〜</small></span>
+        </div>
+      </div>
     </div>
-    <div class="price-card price-card-imgonly">
-      <img src="/images/nokiten-hafu-hanakakushi-ad.jpg" alt="軒天・破風・鼻隠し補修" class="price-card-fullimg" loading="lazy">
+    <div class="price-card">
+      <div class="price-card-photo">
+        <div class="price-ribbon">軒天・破風・鼻隠し補修</div>
+        <img src="/images/photo-nokiten.jpg" alt="軒天・破風・鼻隠し補修" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">傷みを補修し、美観を回復。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">15,000<small>円〜</small></span>
+        </div>
+      </div>
     </div>
-    <div class="price-card price-card-imgonly">
-      <img src="/images/gaiheki-buburi-hoshu-ad.jpg" alt="外壁部分補修" class="price-card-fullimg" loading="lazy">
+    <div class="price-card">
+      <div class="price-card-photo">
+        <div class="price-ribbon">外壁部分補修</div>
+        <img src="/images/photo-gaiheki-bubun.jpg" alt="外壁部分補修" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">ひび割れ・欠けなどの部分補修。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">15,000<small>円〜</small></span>
+        </div>
+      </div>
     </div>
-    <div class="price-card price-card-imgonly">
-      <img src="/images/veranda-bousui-ad.jpg" alt="ベランダ防水・トップコート" class="price-card-fullimg" loading="lazy">
+    <div class="price-card">
+      <div class="price-card-photo">
+        <div class="price-ribbon">ベランダ防水・トップコート</div>
+        <img src="/images/photo-veranda.jpg" alt="ベランダ防水・トップコート" class="price-card-photo-img" loading="lazy">
+      </div>
+      <div class="price-card-body">
+        <div class="price-card-desc">雨水から守り、長持ちするベランダに。</div>
+        <div class="price-row">
+          <span class="price-badge">税込</span>
+          <span class="price-amount">50,000<small>円〜</small></span>
+        </div>
+      </div>
     </div>
   </div>
 
