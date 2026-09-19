@@ -50,4 +50,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://aras0099.netlify.app/blog/posts/gaiheki-tosou-hojokin-jitsujo.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aras0099.netlify.app/blog/posts/amagasaki-tairu-gaiheki-jirei.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://aras0099.netlify.app/blog/posts/gyousha-erabi-aimitsumori-chuui.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>
